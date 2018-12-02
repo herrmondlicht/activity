@@ -18,6 +18,12 @@ export default ({ API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT, getFromServ
     const endpoint = `${API_ENDPOINT}/countries/all`;
     return getFromServer(endpoint)
       .then(res => res.json())
+  },
+
+  spinTheWheel: () => {
+    const endpoint = `${API_ENDPOINT}/reel/spin`;
+    return getFromServer(endpoint)
+      .then(res => res.json())
   }
 
 })
