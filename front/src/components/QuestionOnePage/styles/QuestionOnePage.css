@@ -24,3 +24,9 @@
   display: flex;
   flex-flow: row
 }
+
+@media(max-width:768px){
+  :local(.question-one-page__search-bar-container){
+    min-height: 120px;
+  }
+}

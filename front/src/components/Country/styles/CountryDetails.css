@@ -14,3 +14,12 @@
   margin-right: 50px;
   display: flex;
 }
+
+@media(max-width:768px){
+  :local(.country-details){
+    flex-flow:column
+  }
+  :local(.country-details__header__flag){
+    height: 100px
+  }
+}

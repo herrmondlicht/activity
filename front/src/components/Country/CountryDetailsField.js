@@ -21,8 +21,7 @@ export const createCountryDetailsField = (React) => {
             className={styles['country-details-field__field']}
           >{`${title}:`}</div>
           <div
-            style={{ fontSize: '1.8em', marginLeft: '5px' }}
-            className={styles['country-details-field__field']}>{value}</div>
+            className={styles['country-details-field__field--value']}>{value}</div>
         </div>
       )
     }
