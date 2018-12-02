@@ -1,5 +1,6 @@
 import React from 'react'
 import propTypes from "prop-types";
+import { TextField } from '@material-ui/core';
 
 export const createSearchBar = (React) => {
 
@@ -22,9 +23,12 @@ export const createSearchBar = (React) => {
 
     render() {
       return (
-        <input type="text"
+        <TextField
+          style={{ height: '100%', flexGrow: 1 }}
+          value={this.state.textInput}
           onKeyPress={this.handleTextFieldEnter}
-          onChange={this.setTextInput} />
+          onChange={this.setTextInput}
+        />
       )
     }
   }

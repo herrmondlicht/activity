@@ -1,0 +1,16 @@
+:local(.country-details) {
+  background-color: #eeeeee;
+  padding: 50px;
+  display: flex;
+  flex-flow: row;
+}
+
+:local(.country-details__header__flag){
+  height: 200px;
+  margin: 0 auto 20px auto;
+}
+
+:local(.country-details__header){
+  margin-right: 50px;
+  display: flex;
+}

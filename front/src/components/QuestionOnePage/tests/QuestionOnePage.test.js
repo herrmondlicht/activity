@@ -25,6 +25,7 @@ describe('QuestionPage', () => {
 
   it('return of the searchCountryByName method', async () => {
     const nameToBeSearched = 'Malta'
+    const searchFullText = true
 
     const wrapper = shallow(QuestionPage).withProps()
     const instance = wrapper.instance()
@@ -34,16 +35,29 @@ describe('QuestionPage', () => {
     const expected = 'Republic of Malta';
 
     stub(instance, 'setState')
-      .withArgs({ data: returnFromAPI })
+      .withArgs({ data: returnFromAPI, isFetching: false })
       .returns(expected)
 
     APIHandler
       .searchCountryByName
-      .withArgs({ name: nameToBeSearched }).resolves(returnFromAPI)
+      .withArgs({ name: nameToBeSearched, searchFullText }).resolves(returnFromAPI)
 
-    const actual = await searchCountryByName(nameToBeSearched)
+    const actual = await searchCountryByName(nameToBeSearched, searchFullText)
 
     assert.equal(actual, expected)
 
+  })
+
+  it('return of toggleLoading', () => {
+    const wrapper = shallow(QuestionPage).withProps()
+    const instance = wrapper.instance()
+    const fetchingValue = false
+
+    const { toggleLoading } = instance
+
+    const setState = stub(instance, 'setState')
+
+    toggleLoading(fetchingValue)
+    sinonAssert.calledWithExactly(setState, {isFetching: fetchingValue})
   })
 })

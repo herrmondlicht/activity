@@ -1,0 +1,11 @@
+:local(.country-details-field){
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+}
+
+:local(.country-details-field__field){
+  font-size: 1.3em;
+  align-items: center;
+  display: flex;
+}
