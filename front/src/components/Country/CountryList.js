@@ -8,7 +8,6 @@ const createCountryList = () => {
     <div>
       {Array.isArray(data) && data.map(country => (
         <div style={{marginBottom:'20px'}}>
-        {console.log(country)}
           <CountryDetails data={country} />
         </div>
       ))}
