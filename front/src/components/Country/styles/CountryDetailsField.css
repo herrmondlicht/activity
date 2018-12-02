@@ -5,13 +5,13 @@
 }
 
 :local(.country-details-field__field){
-  font-size: 1.3em;
+  font-size: 1.0em;
   align-items: center;
   display: flex;
 }
 
 :local(.country-details-field__field--value){
-  font-size: 1.8em;
+  font-size: 1.3em;
   align-items: center;
   display: flex;
   margin-left: 5px;
