@@ -1,0 +1,40 @@
+:local(.reel-game-container){
+  display: flex;
+  flex-flow: column;
+  align-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+:local(.result-displayer){
+  display: flex;
+  flex-flow: row;
+  max-width: 800px;
+  margin: 0 auto;
+  flex-grow:1;
+  flex-basis: 50%;
+}
+
+:local(.image-displayer){
+  flex: 1;
+  flex-basis: 30%;
+}
+
+:local(.coin-displayer){
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 40px 0;
+}
+
+:local(.reel-game-container__bottom-block){
+  flex-grow: 1;
+}
+
+:local(.coin-displayer__title){
+  font-size: 1.3em;
+}
+
+:local(.coin-displayer__value){
+  font-size: 2.5em;
+}
