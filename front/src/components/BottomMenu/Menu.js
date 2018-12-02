@@ -3,7 +3,7 @@ import propTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import styles from './styles/Menu.css'
 
-export const createMenu = (React) => {
+export const createMenu = () => {
 
 
   class Menu extends React.Component {
@@ -11,7 +11,7 @@ export const createMenu = (React) => {
     static propTypes = {
       routes: propTypes.array.isRequired
     }
-    
+
     render() {
       const { routes } = this.props
       return (
@@ -35,4 +35,4 @@ export const createMenu = (React) => {
 
 }
 
-export default createMenu(React)
+export default createMenu()
