@@ -20,7 +20,7 @@ export default (
           .then(response => returnResponse(removeErrorsFromArray(response.flat()), res))
       },
       getCountriesList: async (req, res) => {
-        const params = '/all'
+        const params = 'all'
         const responseFromAPI = await fetchCountriesAPI({ params })
         return returnResponse(responseFromAPI, res)
       }
