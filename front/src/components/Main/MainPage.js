@@ -1,6 +1,6 @@
 import React from 'react'
 import styles from './styles/MainPage.css'
-import QuestionOnePage from '../QuestionOnePage';
+import CountryQuestion from '../CountryQuestion';
 import CustomAppBar from '../CustomAppBar';
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Menu from '../BottomMenu/Menu';
@@ -24,7 +24,7 @@ const ROUTES = [
   }
 ]
 
-export const createMainPage = (React, { routes = ROUTES } = {}) => {
+export const createMainPage = ({ routes = ROUTES } = {}) => {
 
   class MainPage extends React.Component {
     render() {
@@ -34,7 +34,7 @@ export const createMainPage = (React, { routes = ROUTES } = {}) => {
           <Router>
             <div className={styles['page-container']}>
               <div className={styles['page-container-content']}>
-                <Route exact path='/question1' component={QuestionOnePage} />
+                <Route exact path='/question1' component={CountryQuestion} />
               </div>
               <Menu routes={routes} />
             </div>
@@ -48,4 +48,4 @@ export const createMainPage = (React, { routes = ROUTES } = {}) => {
 }
 
 
-export default createMainPage(React)
+export default createMainPage()

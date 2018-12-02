@@ -15,7 +15,8 @@
   display: flex;
   padding: 20px;
   background-color: #eeeeee;
-  flex-flow: column
+  flex-flow: column;
+  min-height: 80px;
 }
 
 :local(.question-one-page__search-bar-container__search-bar){
@@ -27,6 +28,9 @@
 
 @media(max-width:768px){
   :local(.question-one-page__search-bar-container){
-    min-height: 120px;
+    min-height: 150px;
+  }
+  :local(.question-one-page__search-bar-container__search-bar){
+    flex-flow: column
   }
 }
