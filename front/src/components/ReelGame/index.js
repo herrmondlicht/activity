@@ -9,6 +9,7 @@ import cherry from "./assets/cherry.png";
 import lemon from "./assets/lemon.png";
 import apple from "./assets/apple.png";
 import styles from './styles/ReelGame.css'
+import CustomAppBar from '../CustomAppBar';
 
 export const createReelGame = ({ APIHandler = getApiHandler() } = {}) => {
 
@@ -38,29 +39,37 @@ export const createReelGame = ({ APIHandler = getApiHandler() } = {}) => {
     render() {
       const { coins, result } = this.state
       return (
-        <div className={styles['reel-game-container']}>
-          <div className={styles['result-displayer']}>
-            {result.map((fruit, index) => (
-              <div key={index} className={styles['image-displayer']}>
-                <ReelPicture fruit={fruit} />
-              </div>
-            ))}
-          </div>
-          <div className={styles['reel-game-container__bottom-block']}>
-            <div className={styles['coin-displayer']}>
-              <div className={styles['coin-displayer__title']}>Your coins:</div>
-              <div className={styles['coin-displayer__value']}>{coins}</div>
-            </div>
-            <div>
-              {
-                coins
-                  ? <Button onClick={this.spendCoinAndPullLever} variant="outlined" color='secondary'>
-                    Pull the lever
-                  </Button>
-                  : <div>
-                    You have spent all your coins :( <br /> Reload the page to play again
+        <div className='container'>
+          {/* the repetition of this header component is known, 
+          I made it this way so it wouldn't impact the development on other features due time
+          This though, for an application this size, is not that bad */}
+          <CustomAppBar title={'Reel Question'} />
+          <div className={'page-container-content'}>
+            <div className={styles['reel-game-container']}>
+              <div className={styles['result-displayer']}>
+                {result.map((fruit, index) => (
+                  <div key={index} className={styles['image-displayer']}>
+                    <ReelPicture fruit={fruit} />
                   </div>
-              }
+                ))}
+              </div>
+              <div className={styles['reel-game-container__bottom-block']}>
+                <div className={styles['coin-displayer']}>
+                  <div className={styles['coin-displayer__title']}>Your coins:</div>
+                  <div className={styles['coin-displayer__value']}>{coins}</div>
+                </div>
+                <div>
+                  {
+                    coins
+                      ? <Button onClick={this.spendCoinAndPullLever} variant="outlined" color='secondary'>
+                        Pull the lever
+                  </Button>
+                      : <div>
+                        You have spent all your coins :( <br /> Reload the page to play again
+                  </div>
+                  }
+                </div>
+              </div>
             </div>
           </div>
         </div>

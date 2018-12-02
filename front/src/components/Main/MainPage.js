@@ -24,16 +24,13 @@ export const createMainPage = ({ routes = ROUTES } = {}) => {
     render() {
       return (
         <div className={styles['main-page']}>
-          <CustomAppBar title={'Question One '} />
           <Router>
             <div className={styles['page-container']}>
-              <div className={styles['page-container-content']}>
-                <Route exact path="/" render={() => (
-                  <Redirect to="/question1" />
-                )} />
-                <Route exact path='/question1' component={CountryQuestion} />
-                <Route exact path='/reel-question' component={ReelGame} />
-              </div>
+              <Route exact path="/" render={() => (
+                <Redirect to="/question1" />
+              )} />
+              <Route exact path='/question1' component={CountryQuestion} />
+              <Route exact path='/reel-question' component={ReelGame} />
               <Menu routes={routes} />
             </div>
           </Router>
