@@ -6,6 +6,7 @@ import SearchBar from "../SearchBar";
 import styles from './styles/CountryQuestion.css'
 import { Checkbox, LinearProgress } from '@material-ui/core';
 import CountryList from '../Country/CountryList';
+import CustomAppBar from '../CustomAppBar';
 
 export const createCountryQuestion = ({ APIHandler = getApiHandler() } = {}) => {
 
@@ -25,7 +26,7 @@ export const createCountryQuestion = ({ APIHandler = getApiHandler() } = {}) => 
     triggerSearch = (name, searchFullText = this.state.searchFullText) =>
       name
         ? this.setState({ isFetching: true }, () => this.searchMultipleCountryNames(name, searchFullText))
-        : this.setState({ data: [] })
+        : this.setState({ isFetching: true }, this.callRetrieveAllAPI)
 
     treatNameArray = (name) => name.split(';').map(str => str.trim())
 
@@ -44,24 +45,38 @@ export const createCountryQuestion = ({ APIHandler = getApiHandler() } = {}) => 
       })
     }
 
+    callRetrieveAllAPI = () => APIHandler.getAllCountries().then(data => this.setState({ data, isFetching: false }))
+
+    componentDidMount = () => this.triggerSearch()
+
     handleSearchFullText = event =>
       this.setState({ searchFullText: event.target.checked });
 
     render() {
       const { searchFullText, isFetching, data } = this.state
       return (
-        <div className={styles['question-one-page']}>
-          <SearchHeader
-            searchMultipleCountryNames={this.triggerSearch}
-            searchFullText={searchFullText}
-            handleSearchFullText={this.handleSearchFullText}
-          />
-          <div className={styles['question-one-page__details']}>
-            {isFetching &&
-              <LinearProgress />}
-            {data && <CountryList data={data} />}
+        <div className='container'>
+          {/* the repetition of this header component is known, 
+          I made it this way so it wouldn't impact the development on other features due time
+          This though, for an application this size is not that bad */}
+          <CustomAppBar title={'Question One '} />
+          <div className={'page-container-content'}>
+            <div className={styles['question-one-page']}>
+              <SearchHeader
+                searchMultipleCountryNames={this.triggerSearch}
+                searchFullText={searchFullText}
+                handleSearchFullText={this.handleSearchFullText}
+              />
+              <div className={styles['question-one-page__details']}>
+                {isFetching &&
+                  <LinearProgress />}
+                {data && <CountryList data={data} />}
+              </div>
+            </div >
           </div>
-        </div >
+
+        </div>
+
       )
     }
   }

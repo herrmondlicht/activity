@@ -15,7 +15,7 @@ export default ({ API_ENDPOINT = process.env.REACT_APP_API_ENDPOINT, getFromServ
   },
 
   getAllCountries: () => {
-    const endpoint = `${API_ENDPOINT}/countries/all`;
+    const endpoint = `${API_ENDPOINT}/countries`;
     return getFromServer(endpoint)
       .then(res => res.json())
   },
