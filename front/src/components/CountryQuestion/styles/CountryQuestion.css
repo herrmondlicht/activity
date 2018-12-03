@@ -28,7 +28,7 @@
 
 @media(max-width:768px){
   :local(.question-one-page__search-bar-container){
-    min-height: 150px;
+    min-height: 200px;
   }
   :local(.question-one-page__search-bar-container__search-bar){
     flex-flow: column
