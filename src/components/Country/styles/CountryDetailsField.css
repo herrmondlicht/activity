@@ -1,0 +1,27 @@
+:local(.country-details-field){
+  display: flex;
+  flex-flow: row;
+  align-content: center;
+}
+
+:local(.country-details-field__field){
+  font-size: 1.0em;
+  align-items: center;
+  display: flex;
+}
+
+:local(.country-details-field__field--value){
+  font-size: 1.3em;
+  align-items: center;
+  display: flex;
+  margin-left: 5px;
+}
+
+@media(max-width: 768px){
+  :local(.country-details-field__field--value){
+    font-size: 1.3em
+  }
+  :local(.country-details-field__field){
+    font-size: 1.0em;
+  }
+}

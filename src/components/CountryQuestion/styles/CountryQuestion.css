@@ -1,0 +1,36 @@
+:local(.question-one-page) {
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+}
+
+:local(.question-one-page__details){
+  margin-top: 25px;
+}
+
+:local(.question-one-page__search-bar-container){
+  align-items: center;
+  display: flex;
+  padding: 20px;
+  background-color: #eeeeee;
+  flex-flow: column;
+  min-height: 80px;
+}
+
+:local(.question-one-page__search-bar-container__search-bar){
+  margin-top: 10px;
+  width: 100%;
+  display: flex;
+  flex-flow: row
+}
+
+@media(max-width:768px){
+  :local(.question-one-page__search-bar-container){
+    min-height: 200px;
+  }
+  :local(.question-one-page__search-bar-container__search-bar){
+    flex-flow: column
+  }
+}
