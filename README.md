@@ -2,6 +2,8 @@
 
 Well, this activity has 2 main sub-repositories. One holding the frontend and the other one the backend. To make things easy, `.env` is commited.
 
+Link for the app: https://country-activity.herokuapp.com/question1
+
 ## A few words
 
 * Fist of all, I'd like to thank you for the opportunity, hope these pieces of code find you well
