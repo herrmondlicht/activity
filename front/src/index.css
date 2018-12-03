@@ -39,4 +39,5 @@ div{
   width: 100%;
   display: flex;
   flex-flow: column;
+  overflow: auto 
 }
